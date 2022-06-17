@@ -18,6 +18,7 @@ import {
   loginSetUser,
 } from 'modules/user/api/actions/query'
 import * as serviceWorker from './serviceWorker'
+import axios from 'axios'
 
 // User Authentication
 const jwtToken = window.localStorage.getItem('jwtToken')
@@ -28,6 +29,8 @@ if (jwtToken && jwtToken !== 'undefined' && jwtToken !== '') {
     store.dispatch(loginSetUser(jwtToken, user))
   }
 }
+
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 ReactDOM.render(
   <StateProvider store={store}>
