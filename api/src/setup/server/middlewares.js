@@ -15,7 +15,7 @@ export default function (server) {
   // Enable CORS
   server.use(
     cors({
-      origin: [URL_WEB],
+      origin: '*',
     }),
   )
 
