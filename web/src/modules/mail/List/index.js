@@ -124,8 +124,38 @@ const List = () => {
               />
             )}
           </h4>
-          {JSON.stringify(mails)}
-
+          <table>
+            <tr>
+              <th>BRAND</th>
+              <th>PRODUCT NAME</th>
+              <th>CATEGORY</th>
+              <th>COLOUR</th>
+              <th>SIZE</th>
+              <th>DATE PURCHASED</th>
+              <th>PRICE</th>
+              <th>SPECIFICATIONS TBC</th>
+              <th>Image</th>
+            </tr>
+            {mails.length === 0 ? (
+              <p>You have not added any mails.</p>
+            ) : (
+              mails.map((mail, i) => {
+                return (
+                  <tr key={i}>
+                    <td>zara</td>
+                    <td>{mail.name}</td>
+                    <td>{mail.size}</td>
+                    <td>{mail.color}</td>
+                    <td>{mail.size}</td>
+                    <td>{}</td>
+                    <td>{mail.price}</td>
+                    <td>SPECIFICATIONS TBC</td>
+                    <td><img src={mail.img} alt={mail.name} /></td>
+                  </tr>
+                )
+              })
+            )}
+          </table>
           {/* <div className='list'>
             {mails.length === 0 ? (
               <p>You have not added any mails.</p>

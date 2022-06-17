@@ -1,9 +1,3 @@
-// Imports
-import dotenv from 'dotenv'
-
-// Load .env
-dotenv.config({ path: './.env.local' })
-
 // Environment
 export const ENV = process.env.NODE_ENV
 

@@ -107,7 +107,7 @@ export default async function list({ auth }) {
             products.push(product)
           }
           console.log('products', products)
-          productsList.push(products)
+          productsList.concat(products)
         }
         // return {
         //   data: productsList,
